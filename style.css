@@ -153,17 +153,6 @@ body.macos-theme {
   background: rgba(236, 72, 153, 0.45);
   color: #fff;
 }
-  font-size: 13px;
-  padding: 2px 8px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.menu-item:hover {
-  background: rgba(255, 255, 255, 0.16);
-  color: #fff;
-}
 
 .highlight-menu {
   background: rgba(255, 45, 85, 0.25);
@@ -227,7 +216,7 @@ body.macos-theme {
   grid-template-columns: 1.6fr 1.2fr 0.95fr;
   grid-template-areas: 
     "safari safari widgets"
-    "felicitacoes felicitacoes felicitacoes"
+    "felicitacoes felicitacoes widgets"
     "notes notes widgets"
     "terminal terminal terminal";
   gap: 22px;
