@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resenha OS // SENAC Palmas - Aniversário Prof. João Pedro</title>
+  <meta name="description" content="Portal de fofocas e cultura pop com estética macOS Sonoma/Sequoia em celebração ao aniversário do Professor João Pedro pela turma do Técnico em Desenvolvimento de Sistemas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="macos-theme">
+
+  <!-- ============================================== -->
+  <!-- 1. BARRA DE MENU SUPERIOR (macOS MENU BAR 28px) -->
+  <!-- ============================================== -->
+  <header class="macos-menubar" role="banner">
+    <div class="menubar-left">
+      <button class="apple-btn" aria-label="Menu Apple" title="Menu Resenha OS">
+        <svg class="apple-icon" viewBox="0 0 170 170" width="14" height="14" fill="currentColor">
+          <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.63-7.74-11.78-14.1-5.77-8.91-10.29-18.91-13.56-30-3.26-11.1-4.9-21.74-4.9-31.92 0-14.56 3.63-26.63 10.89-36.21 7.26-9.58 16.48-14.48 27.67-14.69 4.35 0 9.27 1.13 14.76 3.39 5.48 2.26 9.38 3.44 11.69 3.55 2.12-.11 6.13-1.32 12.02-3.64 5.9-2.31 10.66-3.39 14.3-3.23 11.41.65 20.65 4.96 27.72 12.93-9.9 5.98-14.75 14.35-14.56 25.11.22 8.48 3.51 15.65 9.87 21.52 6.36 5.87 13.88 9.3 22.56 10.28-2.61 7.82-5.77 15.32-9.47 22.51zM119.22 31.84c0-7.39 2.66-14.24 7.99-20.55 5.33-6.3 11.95-10.54 19.86-12.71.22 1.2.33 2.28.33 3.26 0 7.39-2.82 14.39-8.47 21-5.65 6.63-12.28 10.65-19.88 12.06-.11-1.09-.17-2.11-.17-3.06z"/>
+        </svg>
+      </button>
+      <span class="app-active-name">Resenha OS</span>
+      <nav class="menubar-items" aria-label="Menu do Sistema">
+        <button class="menu-item" data-action="focus-safari">Arquivo</button>
+        <button class="menu-item" data-action="focus-notes">Editar</button>
+        <button class="menu-item" data-action="focus-fofocas">Fofocas</button>
+        <button class="menu-item" data-action="focus-terminal">Janela</button>
+        <button class="menu-item highlight-menu" id="quick-celebrate-btn">🎉 Parabéns!</button>
+      </nav>
+    </div>
+
+    <div class="menubar-right">
+      <div class="status-group">
+        <!-- Wi-Fi -->
+        <span class="status-icon" title="Wi-Fi SENAC 5G Conectado">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
+            <path d="M12 3C7.3 3 3.1 4.7 0 7.5L2.1 9.9C4.8 7.5 8.2 6 12 6C15.8 6 19.2 7.5 21.9 9.9L24 7.5C20.9 4.7 16.7 3 12 3ZM12 8C8.7 8 5.7 9.2 3.4 11.2L5.5 13.6C7.3 12 9.5 11 12 11C14.5 11 16.7 12 18.5 13.6L20.6 11.2C18.3 9.2 15.3 8 12 8ZM12 13C10.1 13 8.3 13.7 6.9 14.9L12 21L17.1 14.9C15.7 13.7 13.9 13 12 13Z"/>
+          </svg>
+        </span>
+        <!-- Spotlight Search -->
+        <span class="status-icon" id="spotlight-btn" title="Busca Spotlight (Fofocas & Código)">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+            <path d="M15.5 14H14.71L14.43 13.73C15.41 12.59 16 11.11 16 9.5C16 5.91 13.09 3 9.5 3C5.91 3 3 5.91 3 9.5C3 13.09 5.91 16 9.5 16C11.11 16 12.59 15.41 13.73 14.43L14 14.71V15.5L19 20.49L20.49 19L15.5 14ZM9.5 14C7.01 14 5 11.99 5 9.5C5 7.01 7.01 5 9.5 5C11.99 5 14 7.01 14 9.5C14 11.99 11.99 14 9.5 14Z"/>
+          </svg>
+        </span>
+        <!-- Central de Controle -->
+        <span class="status-icon" title="Central de Controle macOS">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
+            <path d="M3 17V19H9V17H3ZM3 5V7H13V5H3ZM13 21V19H21V17H13V15H11V21H13ZM7 9V11H3V13H7V15H9V9H7ZM21 13V11H11V13H21ZM15 9H17V7H21V5H17V3H15V9Z"/>
+          </svg>
+        </span>
+        <!-- Data e Hora Fixa -->
+        <span class="clock-display" id="clock-display">Seg 23 Nov 18:58</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================== -->
+  <!-- 2. DESKTOP WORKSPACE (macOS STAGE MANAGER/GRID) -->
+  <!-- ============================================== -->
+  <main class="macos-desktop" id="desktop">
+
+    <!-- DESKTOP GRID CONTAINER -->
+    <div class="desktop-stage">
+
+      <!-- ========================================== -->
+      <!-- JANELA 1: SAFARI ("PLANTÃO EXCLUSIVO")    -->
+      <!-- ========================================== -->
+      <section class="macos-window safari-window" id="window-safari" data-window="safari">
+        <!-- Barra de Título da Janela -->
+        <div class="window-titlebar">
+          <div class="window-traffic-lights">
+            <button class="traffic-btn close" data-target="window-safari" title="Fechar"></button>
+            <button class="traffic-btn minimize" data-target="window-safari" title="Minimizar"></button>
+            <button class="traffic-btn expand" data-target="window-safari" title="Expandir"></button>
+          </div>
+          
+          <!-- Barra de Endereços Safari macOS -->
+          <div class="safari-address-bar">
+            <span class="safari-lock">🔒</span>
+            <span class="safari-url">https://resenha.senacpalmas.dev/plantao-jp</span>
+            <button class="safari-refresh" title="Recarregar feed de fofocas">↻</button>
+          </div>
+
+          <div class="window-actions-dummy">
+            <span class="badge-vip">URGENTE • EDIÇÃO VIP</span>
+          </div>
+        </div>
+
+        <!-- Conteúdo Interno da Janela Safari -->
+        <div class="window-content safari-content">
+          <div class="article-hero-header">
+            <div class="exclusive-pill">
+              <span class="pill-fire">🔥</span> FOFOCA DO DIA • SENAC PALMAS
+            </div>
+            <h1 class="safari-main-headline">
+              EXCLUSIVO: Professor João Pedro completa mais um ano de vida hoje e turma do TDS comemora com grande rodada de pizza no SENAC Palmas!
+            </h1>
+            <p class="safari-subtitle">
+              Devs do Técnico em Desenvolvimento de Sistemas trocam o VS Code por fatias de calabresa no pátio do SENAC nesta segunda-feira (23/11) em Palmas-TO.
+            </p>
+          </div>
+
+          <!-- Moldura estilo macOS Photos/Preview Polaroid com a Foto Real -->
+          <div class="polaroid-photo-frame" id="polaroid-frame">
+            <div class="polaroid-inner" id="photo-preview-trigger" title="Clique para abrir no macOS Quick Look">
+              <div class="polaroid-badge-tag">📸 FOTO EXCLUSIVA • REGISTRO DO EVENTO PASSADO</div>
+              <img src="foto-turma.jpg" alt="Foto do evento passado da turma do Técnico em Desenvolvimento de Sistemas com o Professor João Pedro na resenha da pizza" class="polaroid-real-img" loading="eager">
+              <div class="photo-quicklook-overlay">
+                <span class="quicklook-hint">🔍 Clique para Quick Look (Espaço)</span>
+              </div>
+            </div>
+            
+            <div class="polaroid-caption-bar">
+              <div class="caption-details">
+                <span class="polaroid-text">Turma TDS SENAC Palmas • Registro do Evento Passado</span>
+                <span class="polaroid-subtext">📍 Pátio do SENAC • Encontro anterior que serviu de ensaio geral para a grande festa de hoje (23/11)</span>
+              </div>
+              <div class="hype-action-box">
+                <button id="send-hype-btn" class="btn-hype">
+                  Mandar Hype 🔥 <span id="hype-counter" class="hype-badge">842</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Matéria do Safari -->
+          <div class="safari-article-body">
+            <p>
+              A noite desta segunda-feira (23/11) pegou os algoritmos da capital tocantinense de surpresa. O que começou como uma simples arrecadação de <strong>R$ 20,00 por aluno</strong> escalou rapidamente para um dos eventos gastronômico-tecnológicos mais badalados do ano: a comemoração oficial do aniversário do queridíssimo <strong>Professor João Pedro</strong> realizada <strong>no próprio SENAC Palmas</strong>!
+            </p>
+            <p>
+              Nada de deslocamento ou invasão de pizzaria comercial: a verdadeira festa acontece dentro da unidade, com delivery de pizzas gigantes chegando direto para a turma. O registro fotográfico acima, capturado no <strong>evento passado</strong>, comprova o sucesso da fórmula: caixas de pizza no banco do pátio, refrigerantes a postos e o Professor João Pedro (de camiseta mostarda e sorriso tranquilo) cercado pela galera em um momento que serviu de ensaio geral para a comemoração oficial de hoje.
+            </p>
+            <p>
+              Testemunhas confirmam que a meta de garantir <strong>ao menos cinco pizzas tamanho GG</strong> foi batida antes mesmo do fechamento da chamada. O clima no SENAC Palmas combina aroma de queijo gratinado com compilações sem warning, provando que a didática do mestre inspira até os maiores reféns do <em>Stack Overflow</em>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- JANELA 2: NOTAS & FOFOCAS ("BAFAFÁ DA TURMA")-->
+      <!-- ========================================== -->
+      <section class="macos-window notes-window" id="window-notes" data-window="notes">
+        <div class="window-titlebar">
+          <div class="window-traffic-lights">
+            <button class="traffic-btn close" data-target="window-notes" title="Fechar"></button>
+            <button class="traffic-btn minimize" data-target="window-notes" title="Minimizar"></button>
+            <button class="traffic-btn expand" data-target="window-notes" title="Expandir"></button>
+          </div>
+          <span class="window-title">Bafafá da Turma — Notas & Fofocas</span>
+          <div class="window-actions-dummy">
+            <span class="notes-count">3 notas</span>
+          </div>
+        </div>
+
+        <!-- Layout Split View macOS Notes -->
+        <div class="notes-split-view">
+          <!-- Sidebar Lateral com Categorias/Tags -->
+          <aside class="notes-sidebar">
+            <div class="sidebar-header">
+              <span class="sidebar-label">CATEGORIAS</span>
+            </div>
+            <ul class="tag-filter-list">
+              <li>
+                <button class="tag-filter-btn active" data-tag="Todas">
+                  <span class="tag-icon">📁</span> Todas as Notas
+                </button>
+              </li>
+              <li>
+                <button class="tag-filter-btn" data-tag="#ModaDev">
+                  <span class="tag-dot moda"></span> #ModaDev
+                </button>
+              </li>
+              <li>
+                <button class="tag-filter-btn" data-tag="#ClimaPalmas">
+                  <span class="tag-dot clima"></span> #ClimaPalmas
+                </button>
+              </li>
+              <li>
+                <button class="tag-filter-btn" data-tag="#Bastidores">
+                  <span class="tag-dot bastidores"></span> #Bastidores
+                </button>
+              </li>
+            </ul>
+          </aside>
+
+          <!-- Painel Principal de Leitura das Notas -->
+          <div class="notes-content-panel">
+            <div class="notes-cards-container" id="notes-list">
+              
+              <!-- Nota 1: ModaDev -->
+              <article class="note-card" data-category="#ModaDev">
+                <div class="note-meta">
+                  <span class="note-badge badge-moda">#ModaDev</span>
+                  <time class="note-time">Hoje às 17:40</time>
+                </div>
+                <h3 class="note-title">Mistério das Camisetas Personalizadas</h3>
+                <p class="note-snippet">
+                  A saga da entrega do uniforme oficial da turma quase não chega a tempo da foto oficial! Houve atraso épico do fornecedor, desespero e figurinhas de <em>"saiu esperto e otário"</em> no grupo de WhatsApp. Mas com insistência direta e presença no portão da confecção, o deploy da camisa foi concluído com sucesso e a turma garantiu o traje para a resenha!
+                </p>
+                <div class="note-reactions">
+                  <button class="reaction-btn" onclick="reactNote(this)">😂 <span class="rx-count">48</span></button>
+                  <button class="reaction-btn" onclick="reactNote(this)">🔥 <span class="rx-count">89</span></button>
+                  <button class="reaction-btn" onclick="reactNote(this)">👏 <span class="rx-count">62</span></button>
+                </div>
+              </article>
+
+              <!-- Nota 2: ClimaPalmas -->
+              <article class="note-card" data-category="#ClimaPalmas">
+                <div class="note-meta">
+                  <span class="note-badge badge-clima">#ClimaPalmas</span>
+                  <time class="note-time">Hoje às 18:15</time>
+                </div>
+                <h3 class="note-title">Tempestade em Palmas</h3>
+                <p class="note-snippet">
+                  Chuva forte e trovoadas tentaram cancelar o rolê e derrubar a conexão da galera. As clássicas perguntas <em>"Vai ter aula?"</em> e <em>"Posso ir embora?"</em> pipocaram em massa, mas a resenha seguiu firme e forte sem perder nenhum pacote de dados ou pedaço de pizza!
+                </p>
+                <div class="note-reactions">
+                  <button class="reaction-btn" onclick="reactNote(this)">😂 <span class="rx-count">92</span></button>
+                  <button class="reaction-btn" onclick="reactNote(this)">🔥 <span class="rx-count">54</span></button>
+                  <button class="reaction-btn" onclick="reactNote(this)">👏 <span class="rx-count">71</span></button>
+                </div>
+              </article>
+
+              <!-- Nota 3: Bastidores -->
+              <article class="note-card" data-category="#Bastidores">
+                <div class="note-meta">
+                  <span class="note-badge badge-bastidores">#Bastidores</span>
+                  <time class="note-time">Hoje às 18:50</time>
+                </div>
+                <h3 class="note-title">Vazou o código-fonte do parabéns!</h3>
+                <p class="note-snippet">
+                  A turma do Técnico em Desenvolvimento de Sistemas criou um portal exclusivo de última hora e provou que sabe entregar projeto sob pressão melhor que muito sprint por aí. Uma verdadeira declaração de carinho, código limpo e apreço pelo Professor João Pedro!
+                </p>
+                <div class="note-reactions">
+                  <button class="reaction-btn" onclick="reactNote(this)">😂 <span class="rx-count">33</span></button>
+                  <button class="reaction-btn" onclick="reactNote(this)">🔥 <span class="rx-count">140</span></button>
+                  <button class="reaction-btn" onclick="reactNote(this)">👏 <span class="rx-count">198</span></button>
+                </div>
+              </article>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- WIDGETS FLUTUANTES (macOS SONOMA DESKTOP)  -->
+      <!-- ========================================== -->
+      <aside class="desktop-widgets-column" aria-label="Widgets do Desktop">
+        
+        <!-- Widget 1: Palavra do Ano 2026 (Spotify Wrapped Style) -->
+        <div class="macos-widget widget-wrapped">
+          <div class="widget-header">
+            <span class="wrapped-tag">RETROSPECTIVA 2026</span>
+            <span class="wrapped-logo">✨ WRAPPED</span>
+          </div>
+          <div class="wrapped-body">
+            <span class="wrapped-label">A palavra mais usada em sala foi:</span>
+            <div class="wrapped-big-word">"CABEÇÃO"</div>
+            <p class="wrapped-desc">Presente em 99,8% das correções de bugs, aulas e resenhas do ano letivo.</p>
+          </div>
+          <div class="wrapped-action">
+            <button id="measure-cabecao-btn" class="btn-measure">
+              Medir Nível de Cabeção 🧠
+            </button>
+            <div id="cabecao-result" class="cabecao-diagnosis is-hidden">
+              <span id="cabecao-score" class="score-badge">94%</span>
+              <p id="cabecao-text">Diagnóstico: Tentou dar git push sem salvar o arquivo!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Widget 2: Clima • Palmas, TO (Apple Weather Style) -->
+        <div class="macos-widget widget-weather">
+          <div class="weather-top">
+            <div class="city-info">
+              <h3>Palmas</h3>
+              <span>Tocantins</span>
+            </div>
+            <div class="weather-temp">28°</div>
+          </div>
+          <div class="weather-condition">
+            <span class="weather-icon">🌧️🍕</span>
+            <strong>Chuva de Código e Mussarela</strong>
+          </div>
+          <div class="weather-metrics">
+            <div class="metric-row">
+              <span>Umidade de Resenha:</span>
+              <strong>100% (Crítica)</strong>
+            </div>
+            <div class="metric-row">
+              <span>Produtividade pós-pizza:</span>
+              <strong>0%</strong>
+            </div>
+            <div class="weather-progress-bar">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Widget 3: Mural Ao Vivo (Mini-feed da Turma) -->
+        <div class="macos-widget widget-mural" id="widget-mural">
+          <div class="mural-header">
+            <h4>💬 Mural Ao Vivo da Turma</h4>
+            <span class="live-pill"><span class="pulse-green"></span> AO VIVO</span>
+          </div>
+
+          <div class="mural-messages-scroll" id="mural-messages">
+            <div class="mural-msg">
+              <span class="msg-author">Eduardo:</span>
+              <span class="msg-text">Parabéns professor, valeu por ensinar com tanta calma! 🚀</span>
+            </div>
+            <div class="mural-msg">
+              <span class="msg-author">Yasmin:</span>
+              <span class="msg-text">Feliz aniversário! A melhor didática do SENAC! 👏🎂</span>
+            </div>
+            <div class="mural-msg">
+              <span class="msg-author">Arthur:</span>
+              <span class="msg-text">A pizza é garantida, parabéns João Pedro! 🍕</span>
+            </div>
+            <div class="mural-msg">
+              <span class="msg-author">Rafael:</span>
+              <span class="msg-text">Mestre, hoje não tem bug que estrague o dia! 🔥</span>
+            </div>
+            <div class="mural-msg">
+              <span class="msg-author">Isaque:</span>
+              <span class="msg-text">Muita saúde e conquistas professor! 🎉</span>
+            </div>
+            <div class="mural-msg">
+              <span class="msg-author">Daniel:</span>
+              <span class="msg-text">Obrigado por nos motivar a programar! 💻</span>
+            </div>
+            <div class="mural-msg">
+              <span class="msg-author">Hatus:</span>
+              <span class="msg-text">Vida longa ao nosso orientador favorito! 👑</span>
+            </div>
+            <div class="mural-msg">
+              <span class="msg-author">Gabriel:</span>
+              <span class="msg-text">Feliz ciclo novo, muita paz e código sem erro! ⭐</span>
+            </div>
+            <div class="mural-msg">
+              <span class="msg-author">Mariana:</span>
+              <span class="msg-text">Parabéns Professor João Pedro, você é fera! 🎈</span>
+            </div>
+            <div class="mural-msg">
+              <span class="msg-author">Enzo:</span>
+              <span class="msg-text">Partiu comer pizza, parabéns mestre! 🍕🔥</span>
+            </div>
+            <div class="mural-msg">
+              <span class="msg-author">Geizer:</span>
+              <span class="msg-text">Homenagem mais que merecida! Parabéns mestre! 🥂</span>
+            </div>
+          </div>
+
+          <!-- Formulário Rápido de Recado -->
+          <form class="mural-input-row" id="mural-form">
+            <input type="text" id="mural-name-input" placeholder="Seu nome" maxlength="20" required>
+            <input type="text" id="mural-text-input" placeholder="Mande um recado..." maxlength="70" required>
+            <button type="submit" class="btn-send-msg">Enviar</button>
+          </form>
+        </div>
+
+      </aside>
+
+      <!-- ========================================== -->
+      <!-- JANELA 3: TERMINAL MODAL ("zsh — parabens.sh") -->
+      <!-- ========================================== -->
+      <section class="macos-window terminal-window is-minimized" id="window-terminal" data-window="terminal">
+        <div class="window-titlebar terminal-titlebar">
+          <div class="window-traffic-lights">
+            <button class="traffic-btn close" data-target="window-terminal" title="Fechar"></button>
+            <button class="traffic-btn minimize" data-target="window-terminal" title="Minimizar"></button>
+            <button class="traffic-btn expand" data-target="window-terminal" title="Expandir"></button>
+          </div>
+          <span class="window-title terminal-title">zsh — parabens.sh (80x24)</span>
+          <div class="window-actions-dummy"></div>
+        </div>
+
+        <div class="window-content terminal-content">
+          <div class="terminal-shell" id="terminal-output">
+            <div class="term-line prompt">
+              <span class="term-user">senac@macbook-pro</span>:<span class="term-path">~/resenha-joao-pedro</span>$ sudo parabens --prof="João Pedro" --turma="Dev SENAC"
+            </div>
+            <div class="term-line output info">[INFO] Iniciando rotina de celebração v2026.11...</div>
+            <div class="term-line output">[OK] Delivery de 5x Pizzas GG confirmado com destino ao SENAC Palmas.</div>
+            <div class="term-line output">[OK] Camisetas personalizadas resgatadas do fornecedor com sucesso.</div>
+            <div class="term-line output">[OK] Palavra do ano compilada: "CABEÇÃO" (4.827 ocorrências).</div>
+            <div class="term-line ascii-art">
+  _____  _____   ____  ______     _  ____          ____    _____  ______ _____  _____   ____  
+ |  __ \|  __ \ / __ \|  ____|   | |/ __ \   /\   / __ \  |  __ \|  ____|  __ \|  __ \ / __ \ 
+ | |__) | |__) | |  | | |__      | | |  | | /  \ | |  | | | |__) | |__  | |  | | |__) | |  | |
+ |  ___/|  _  /| |  | |  __| _   | | |  | |/ /\ \| |  | | |  ___/|  __| | |  | |  _  /| |  | |
+ | |    | | \ \| |__| | |   | |__| | |__| / ____ \ |__| | | |    | |____| |__| | | \ \| |__| |
+ |_|    |_|  \_\\____/|_|    \____/ \____/_/    \_\\____/  |_|    |______|_____/|_|  \_\\____/ 
+            </div>
+            <div class="term-line output success">
+              ✨ STATUS FINAL: Parabéns Professor João Pedro! A turma de TDS SENAC Palmas admira muito você!
+            </div>
+            <div class="term-line prompt active-prompt">
+              <span class="term-user">senac@macbook-pro</span>:<span class="term-path">~/resenha-joao-pedro</span>$ <span class="cursor-blink">█</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /desktop-stage -->
+
+  </main>
+
+  <!-- ============================================== -->
+  <!-- 3. DOCK INFERIOR FLUTUANTE (macOS DOCK)       -->
+  <!-- ============================================== -->
+  <footer class="macos-dock-container" role="navigation" aria-label="Dock de Aplicativos">
+    <div class="macos-dock" id="macos-dock">
+      
+      <!-- App 1: Safari / Plantão -->
+      <button class="dock-item active" data-app="safari" aria-label="Abrir Safari">
+        <div class="dock-icon safari-icon">
+          <svg viewBox="0 0 100 100" width="46" height="46">
+            <circle cx="50" cy="50" r="46" fill="#1e90ff"/>
+            <circle cx="50" cy="50" r="42" fill="#0066cc"/>
+            <polygon points="50,15 58,46 50,42" fill="#ff3b30"/>
+            <polygon points="50,85 42,54 50,58" fill="#ffffff"/>
+            <polygon points="50,15 42,54 50,42" fill="#ff6b64"/>
+            <polygon points="50,85 58,46 50,58" fill="#e0e0e0"/>
+            <circle cx="50" cy="50" r="6" fill="#ffffff"/>
+          </svg>
+        </div>
+        <span class="dock-tooltip">Safari (Plantão JP)</span>
+        <span class="dock-dot"></span>
+      </button>
+
+      <!-- App 2: Notas / Fofocas -->
+      <button class="dock-item active" data-app="notes" aria-label="Abrir Notas">
+        <div class="dock-icon notes-icon">
+          <div class="notes-icon-inner">
+            <div class="notes-yellow-header"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+          </div>
+        </div>
+        <span class="dock-tooltip">Notas (Bafafá da Turma)</span>
+        <span class="dock-dot"></span>
+      </button>
+
+      <!-- App 3: Terminal / zsh -->
+      <button class="dock-item" data-app="terminal" aria-label="Abrir Terminal">
+        <div class="dock-icon terminal-icon">
+          <div class="terminal-icon-inner">
+            <span class="term-gt">&gt;_</span>
+          </div>
+        </div>
+        <span class="dock-tooltip">Terminal (parabens.sh)</span>
+        <span class="dock-dot" id="terminal-dot"></span>
+      </button>
+
+      <!-- App 4: Mural VIP -->
+      <button class="dock-item" data-app="mural" aria-label="Rolar para Mural">
+        <div class="dock-icon mural-icon">
+          <div class="mural-icon-inner">
+            <span>💬</span>
+          </div>
+        </div>
+        <span class="dock-tooltip">Mural de Recados</span>
+        <span class="dock-dot"></span>
+      </button>
+
+      <div class="dock-separator"></div>
+
+      <!-- App 5: Lixeira (Lixeira dos Bugs) -->
+      <button class="dock-item trash-item" data-app="trash" aria-label="Lixeira">
+        <div class="dock-icon trash-icon">
+          <svg viewBox="0 0 24 24" width="38" height="38" fill="#a0aec0">
+            <path d="M6 19C6 20.1 6.9 21 8 21H16C17.1 21 18 20.1 18 19V7H6V19ZM19 4H15.5L14.5 3H9.5L8.5 4H5V6H19V4Z"/>
+          </svg>
+        </div>
+        <span class="dock-tooltip">Lixeira de Bugs</span>
+      </button>
+
+    </div>
+  </footer>
+
+  <!-- Modal macOS Quick Look (Preview da Foto) -->
+  <div class="quicklook-modal is-hidden" id="quicklook-modal" role="dialog" aria-modal="true" aria-label="macOS Quick Look">
+    <div class="quicklook-backdrop" id="quicklook-backdrop"></div>
+    <div class="quicklook-window">
+      <div class="quicklook-titlebar">
+        <div class="window-traffic-lights">
+          <button class="traffic-btn close" id="quicklook-close-btn" title="Fechar"></button>
+          <span class="quicklook-filename">foto-turma-pizza-2026.jpg — Visualização Rápida</span>
+        </div>
+      </div>
+      <div class="quicklook-content">
+        <img src="foto-turma.jpg" alt="Foto da turma do SENAC Palmas com o Professor João Pedro na resenha da pizza" class="quicklook-full-img">
+      </div>
+      <div class="quicklook-footer">
+        <span>📸 Resenha Histórica da Turma TDS • SENAC Palmas • Aniversário do Professor João Pedro</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Canvas para Chuva de Confetes do macOS -->
+  <canvas id="macos-confetti-canvas"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
