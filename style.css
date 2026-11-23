@@ -227,6 +227,7 @@ body.macos-theme {
   grid-template-columns: 1.6fr 1.2fr 0.95fr;
   grid-template-areas: 
     "safari safari widgets"
+    "felicitacoes felicitacoes widgets"
     "notes notes widgets"
     "terminal terminal terminal";
   gap: 22px;
@@ -235,6 +236,7 @@ body.macos-theme {
 
 /* Posicionamento nas Áreas do Grid */
 .safari-window { grid-area: safari; }
+.tribute-window { grid-area: felicitacoes; }
 .notes-window { grid-area: notes; }
 .desktop-widgets-column { grid-area: widgets; }
 .terminal-window { grid-area: terminal; }
@@ -1325,6 +1327,225 @@ body.macos-theme {
 }
 
 /* ==========================================================================
+   JANELA DE FELICITAÇÕES ("HOMENAGEM DA TURMA")
+   ========================================================================== */
+.tribute-window {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.tribute-titlebar {
+  background: rgba(253, 242, 248, 0.85);
+  border-bottom: 1px solid rgba(236, 72, 153, 0.15);
+}
+
+.badge-tribute {
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.04em;
+  box-shadow: 0 2px 6px rgba(236, 72, 153, 0.25);
+}
+
+.tribute-content {
+  padding: 28px 32px;
+}
+
+.tribute-header {
+  margin-bottom: 20px;
+}
+
+.tribute-tag-pill {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.feather-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #be185d;
+  background: rgba(244, 63, 94, 0.1);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(244, 63, 94, 0.2);
+}
+
+.tribute-main-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.4rem, 2.3vw, 2rem);
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.tribute-letter-box {
+  background: #fdfcf9;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 24px 30px;
+  position: relative;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+  margin-bottom: 24px;
+}
+
+.tribute-quote-mark {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 4.5rem;
+  color: rgba(236, 72, 153, 0.2);
+  line-height: 1;
+  position: absolute;
+  user-select: none;
+}
+
+.tribute-quote-mark.start {
+  top: 8px;
+  left: 12px;
+}
+
+.tribute-quote-mark.end {
+  bottom: -15px;
+  right: 18px;
+}
+
+.tribute-full-text {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.05rem, 1.8vw, 1.22rem);
+  line-height: 1.8;
+  color: #1e293b;
+  text-indent: 2rem;
+  position: relative;
+  z-index: 2;
+  text-align: justify;
+}
+
+.tribute-signatures-area {
+  border-top: 1px dashed rgba(0, 0, 0, 0.12);
+  padding-top: 18px;
+  margin-bottom: 24px;
+}
+
+.signature-top-line {
+  width: 140px;
+  height: 2px;
+  background: linear-gradient(90deg, #ec4899, #8b5cf6);
+  margin-bottom: 8px;
+}
+
+.signature-title {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.signature-subtitle {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-style: italic;
+}
+
+.students-roster {
+  margin-top: 16px;
+  background: rgba(248, 250, 252, 0.8);
+  border-radius: 10px;
+  padding: 12px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.roster-label {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #475569;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.students-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  border-radius: 14px;
+  padding: 3px 10px;
+  font-size: 11.5px;
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.15s ease;
+}
+
+.chip:hover {
+  background: #fdf2f8;
+  color: #ec4899;
+  border-color: #fbcfe8;
+  transform: translateY(-1px);
+}
+
+.tribute-interactive-row {
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 18px;
+}
+
+.btn-applause {
+  background: linear-gradient(135deg, #ec4899, #d946ef);
+  color: #ffffff;
+  border: none;
+  font-family: var(--font-system);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 22px;
+  border-radius: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(236, 72, 153, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-applause:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.45);
+}
+
+.applause-counter {
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.applause-hint {
+  display: block;
+  font-size: 11px;
+  color: #8e8e93;
+  margin-top: 6px;
+}
+
+.tribute-icon-inner {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ec4899, #f43f5e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+/* ==========================================================================
    8. RESPONSIVIDADE E DISPOSITIVOS MÓVEIS
    ========================================================================== */
 @media (max-width: 1100px) {
@@ -1332,6 +1553,7 @@ body.macos-theme {
     grid-template-columns: 1fr;
     grid-template-areas: 
       "safari"
+      "felicitacoes"
       "notes"
       "widgets"
       "terminal";

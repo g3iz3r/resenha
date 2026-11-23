@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initDockNavigation();
   initNotesFilters();
   initHypeButton();
+  initApplauseButton();
   initCabecaoMeter();
   initMuralFeed();
   initMenuBarActions();
@@ -103,6 +104,8 @@ function initDockNavigation() {
 
       if (app === 'safari') {
         openOrRestoreWindow('window-safari', 'safari');
+      } else if (app === 'felicitacoes') {
+        openOrRestoreWindow('window-felicitacoes', 'felicitacoes');
       } else if (app === 'notes') {
         openOrRestoreWindow('window-notes', 'notes');
       } else if (app === 'terminal') {
@@ -190,6 +193,28 @@ function initHypeButton() {
 
       if (window.fireMacConfetti) {
         window.fireMacConfetti({ particleCount: 60, spread: 75 });
+      }
+    });
+  }
+}
+
+/* ==========================================================================
+   4.1 PALMAS PARA O PROFESSOR JOÃO PEDRO (CARTA DE FELICITAÇÕES)
+   ========================================================================== */
+function initApplauseButton() {
+  const applauseBtn = document.getElementById('tribute-applause-btn');
+  const counterSpan = document.getElementById('applause-counter');
+
+  if (applauseBtn && counterSpan) {
+    applauseBtn.addEventListener('click', () => {
+      let count = parseInt(counterSpan.textContent, 10) || 96;
+      counterSpan.textContent = count + 1;
+
+      applauseBtn.style.transform = 'scale(1.12) translateY(-2px)';
+      setTimeout(() => { applauseBtn.style.transform = 'none'; }, 150);
+
+      if (window.fireMacConfetti) {
+        window.fireMacConfetti({ particleCount: 75, spread: 85 });
       }
     });
   }
@@ -291,6 +316,8 @@ function initMenuBarActions() {
       const action = btn.getAttribute('data-action');
       if (action === 'focus-safari') {
         openOrRestoreWindow('window-safari', 'safari');
+      } else if (action === 'focus-felicitacoes') {
+        openOrRestoreWindow('window-felicitacoes', 'felicitacoes');
       } else if (action === 'focus-notes' || action === 'focus-fofocas') {
         openOrRestoreWindow('window-notes', 'notes');
       } else if (action === 'focus-terminal') {

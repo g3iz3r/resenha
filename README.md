@@ -1,4 +1,4 @@
-# 🍎 Resenha OS // SENAC Palmas
+# 🎓 Resenha SENAC Palmas
 ### Edição Especial: Aniversário do Professor João Pedro 🎂🍕
 
 Um portal interativo de fofocas, cultura pop e bastidores acadêmicos com estética moderna inspirada no **macOS Sequoia / Sonoma**, desenvolvido pela turma do **Técnico em Desenvolvimento de Sistemas (TDS) do SENAC Palmas** para celebrar o aniversário do nosso mestre e orientador, **Professor João Pedro** (23 de Novembro de 2026).
@@ -7,7 +7,7 @@ Um portal interativo de fofocas, cultura pop e bastidores acadêmicos com estét
 
 ## 📸 Demonstração do Projeto
 
-O sistema simula um ambiente de trabalho macOS completo no navegador, com janelas translúcidas em glassmorphism, menu bar superior, widgets dinâmicos de desktop, terminal integrado e dock inferior flutuante com magnificação.
+O sistema simula um ambiente de trabalho moderno no navegador, com janelas translúcidas em glassmorphism, menu bar superior estilizada do SENAC, widgets dinâmicos de desktop, terminal integrado e dock inferior flutuante com magnificação.
 
 ---
 
@@ -19,7 +19,12 @@ O sistema simula um ambiente de trabalho macOS completo no navegador, com janela
 - **macOS Quick Look:** Ao clicar na foto ou pressionar a tecla <kbd>Barra de Espaço</kbd>, a imagem se abre em tela cheia com visualização rápida translúcida.
 - **Botão "Mandar Hype 🔥":** Contador em tempo real com efeitos comemorativos.
 
-### 2. 📝 Notas — "Bafafá da Turma" (Split View)
+### 2. 💌 Felicitações ao Mestre — "Carta Aberta da Turma"
+- **Homenagem Oficial Completa:** Carta aberta de gratidão e reconhecimento ao Professor João Pedro em design nobre editorial com aspas clássicas.
+- **Assinaturas Nominais da Turma:** Chips com os nomes de todos os alunos (Eduardo, Yasmin, Arthur, Rafael, Isaque, Daniel, Hatus, Gabriel, Mariana, Enzo e Geizer).
+- **Botão de Aplausos 👏:** Botão interativo para bater palmas ao mestre, com contador em tempo real e chuva de confetes festivos!
+
+### 3. 📝 Notas — "Bafafá da Turma" (Split View)
 - Layout clássico com barra lateral de categorias e painel de leitura.
 - Filtro rápido por tags:
   - `Todas`: Visão geral de todos os fuxicos.
